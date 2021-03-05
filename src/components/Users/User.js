@@ -18,7 +18,6 @@ class User extends Component {
 			location,
 			bio,
 			blog,
-			website,
 			login,
 			html_url,
 			followers,
@@ -36,12 +35,15 @@ class User extends Component {
 				<Link to='/' className='btn btn-light'>
 					Back to Search
 				</Link>
-				Hierable :{' '}
-				{hierable ? (
-					<i className='fas fa-check text-success' />
-				) : (
-					<i className='fas fa-times-circle text-danger' />
-				)}
+				<div className='my-1'>
+					Hierable :{' '}
+					{hierable ? (
+						<i className='fas fa-check text-success' />
+					) : (
+						<i className='fas fa-times-circle text-danger' />
+					)}
+				</div>
+
 				<div className='card grid-2'>
 					<div className='all-center'>
 						<img
@@ -86,7 +88,7 @@ class User extends Component {
 								{blog && (
 									<Fragment>
 										<strong>Website: </strong>
-										{blog}
+										<a href={blog}>{blog}</a>
 									</Fragment>
 								)}
 							</li>
